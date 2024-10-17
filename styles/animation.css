@@ -1,0 +1,55 @@
+@keyframes blink {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+.text-blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes dot-blink {
+    0% {
+        color: #f00;
+    }
+
+    50% {
+        color: #610000;
+    }
+
+    100% {
+        color: #f00;
+    }
+}
+
+
+.dot-blink {
+    animation: dot-blink 2s infinite;
+}
+
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-animation {
+    animation: scale 2s infinite;
+}

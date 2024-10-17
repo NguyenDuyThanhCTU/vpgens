@@ -656,10 +656,12 @@
     font-weight: 300;
     text-indent: 12px;
     line-height: 1.6em;
-    padding-top: .2em;
-    margin-bottom: 18px;
+    /* padding-top: .2em; */
+    /* margin-bottom: 18px; */
     font-family: "Lexend Deca";
 }
+
+
 
 .ck-content blockquote {
     font-size: 1em;

@@ -19,7 +19,7 @@ const config: Config = {
       },
 
       colors: {
-        main: "#162d6b",
+        main: "#008001",
         mainRed: "#e2231b",
         mainOrange: "#F26902",
       },

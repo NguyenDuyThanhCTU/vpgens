@@ -32,3 +32,24 @@ export interface AccountProps {
   gender?: string;
   date?: string;
 }
+
+export interface ForgotFormProps {
+  email: string;
+  password: string;
+  repassword?: string;
+  id: string;
+}
+
+export interface RegisterFormProps {
+  firstname: string;
+  lastname: string;
+  phonenumber: string;
+  gender: string;
+  email: string;
+  password: string;
+}
+
+export interface LoginFormProps {
+  email: string;
+  password: string;
+}
