@@ -35,7 +35,7 @@ export default async function RootLayout({
               PostCategory={PostCategory}
             />
 
-            <main className="d:mt-[112px] p:mt-[91px]  d:text-[16px] p:text-[13px] h-screen ">
+            <main className="d:mt-[112px] p:mt-[91px]  d:text-[16px] p:text-[13px] ">
               {children}
             </main>
             <Copyright

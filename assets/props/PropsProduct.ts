@@ -46,7 +46,7 @@ export interface ProductProps {
   discountedAmount?: string;
   newPrice?: string;
   subproduct?: [];
-
+  latest?: boolean;
   addfield: boolean;
   field1: string;
   fiedl2: string;

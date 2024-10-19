@@ -1,4 +1,4 @@
-import { CategoryProps } from "@assets/props";
+import { CategoryProps } from "@assets/props/Props";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoMdArrowDropright } from "react-icons/io";
@@ -68,12 +68,12 @@ const DropdownMobile = ({
                           });
                           return (
                             <div key={childIdx}>
-                              <Link
-                                href={`/products/${LV0Slug}?category=${LV1Slug}`}
+                              <div
+                                // href={`/products/${LV0Slug}?category=${LV1Slug}`}
                                 className="text-mainOrange font-semibold"
                               >
                                 {childItem}
-                              </Link>
+                              </div>
                               {item[LV1Slug] && (
                                 <div className="flex flex-col gap-1 mt-1">
                                   {item[LV1Slug].map(
@@ -84,7 +84,9 @@ const DropdownMobile = ({
                                       });
                                       return (
                                         <Link
-                                          href={`/products/${LV0Slug}?category=${LV1Slug}&filter=${LV2Slug}`}
+                                          // href={`/products/${LV0Slug}?category=${LV1Slug}&filter=${LV2Slug}`}
+                                          href={`/products/${LV0Slug}?category=${LV1Slug}`}
+                                          onClick={() => setDropdownMenu(false)}
                                           className="text-gray-500"
                                           key={LV2idx}
                                         >

@@ -2,11 +2,11 @@
 
 import { CategoryProps } from "@assets/props/Props";
 import { ProductProps } from "@assets/props/PropsProduct";
-import AddCart from "@components/client/modal/AddCart";
-import Cart from "@components/client/modal/Cart";
-import FavoriteModal from "@components/client/modal/Favorite";
-import QuickView from "@components/client/modal/QuickView";
-import RemoveFavor from "@components/client/modal/RemoveFavor";
+import AddCart from "@components/modal/AddCart";
+import Cart from "@components/modal/Cart";
+import FavoriteModal from "@components/modal/Favorite";
+import QuickView from "@components/modal/QuickView";
+import RemoveFavor from "@components/modal/RemoveFavor";
 import { useStateProvider } from "@context/StateProvider";
 import Image from "next/image";
 import { useEffect } from "react";

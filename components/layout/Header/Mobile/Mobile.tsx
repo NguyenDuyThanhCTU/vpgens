@@ -9,10 +9,10 @@ import { HeaderItemsProps } from "@components/layout/Header";
 import { useUser } from "@context/UserProvider";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
-import { CategoryProps } from "@assets/props";
 import DropdownMobile from "./DropdownMobile";
 import { typingEffect } from "@components/items/ClientHandle";
 import { useStateProvider } from "@context/StateProvider";
+import { CategoryProps } from "@assets/props/Props";
 
 interface MobileProps {
   setOpenUser: (isOpen: boolean) => void;
@@ -61,49 +61,51 @@ const Mobile = ({
         scrollTop > lastScrollTop ? " -top-[91px]" : "top-0"
       } duration-300 fixed w-full bg-white d:hidden p:block z-50`}
     >
-      <div className="h-[51px] bg-white flex text-[22px] items-center justify-between px-3">
+      <div className="h-[51px] bg-white  text-[22px] items-center justify-between px-3 grid grid-cols-2">
         <div className="h-[70%]">
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/Your%20paragraph%20text1231.jpg?alt=media&token=351f8eaa-52ce-427c-acfb-1e7cf1d31faa"
             alt="logo"
             width={300}
             height={300}
-            className="w-full h-full"
+            className="w-full h-full object-contain"
           />
         </div>
-        <div>
-          {CurrentUser.checked ? (
-            <Link href={`/account`}>
-              <PiUserThin className="text-[25px]" />
-            </Link>
-          ) : (
-            <Link href={`/account?params=login`}>
-              <PiUserThin
-                className="text-[25px]"
-                onClick={() => setOpenUser(true)}
-              />
-            </Link>
-          )}
-        </div>
-        <div onClick={() => setOpenSearch(!isOpenSearch)}>
-          <IoSearch />
-        </div>
+        <div className="flex items-center justify-between">
+          <div>
+            {CurrentUser.checked ? (
+              <Link href={`/account`}>
+                <PiUserThin className="text-[25px]" />
+              </Link>
+            ) : (
+              <Link href={`/account?params=login`}>
+                <PiUserThin
+                  className="text-[25px]"
+                  onClick={() => setOpenUser(true)}
+                />
+              </Link>
+            )}
+          </div>
+          <div onClick={() => setOpenSearch(!isOpenSearch)}>
+            <IoSearch />
+          </div>
 
-        <Badge count={isCart.length} color="#ff5d22" showZero>
-          <PiHeartThin
-            className="text-[20px]"
-            onClick={() => setOpenModal({ ...isOpenModal, favorite: true })}
-          />
-        </Badge>
-        <Badge count={isCart.length} color="#ff5d22" showZero>
-          <PiShoppingCartThin
-            className="text-[20px]"
-            onClick={() => setOpenModal({ ...isOpenModal, cart: true })}
-          />
-        </Badge>
+          <Badge count={isCart.length} color="#ff5d22" showZero>
+            <PiHeartThin
+              className="text-[20px]"
+              onClick={() => setOpenModal({ ...isOpenModal, favorite: true })}
+            />
+          </Badge>
+          <Badge count={isCart.length} color="#ff5d22" showZero>
+            <PiShoppingCartThin
+              className="text-[20px]"
+              onClick={() => setOpenModal({ ...isOpenModal, cart: true })}
+            />
+          </Badge>
 
-        <div onClick={() => setOpenMenu(true)}>
-          <IoMenuOutline />
+          <div onClick={() => setOpenMenu(true)}>
+            <IoMenuOutline />
+          </div>
         </div>
       </div>
       <div className="h-[40px] bg-[#333]">

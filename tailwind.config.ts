@@ -21,7 +21,8 @@ const config: Config = {
       colors: {
         main: "#008001",
         mainRed: "#e2231b",
-        mainOrange: "#F26902",
+        mainOrange: "#ff5d22",
+        mainBG: "#f0f1f2",
       },
     },
   },

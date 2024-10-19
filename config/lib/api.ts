@@ -100,6 +100,7 @@ export async function find(CollectionName: string, Signal?: boolean) {
   try {
     const response = await fetch(firebaseEndpoint, {
       next: { revalidate: Signal ? 0 : 1800 },
+      cache: "force-cache",
     });
 
     if (!response.ok) {

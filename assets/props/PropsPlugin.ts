@@ -29,3 +29,19 @@ export interface GuaranteeProps {
   daysRemaining: string;
   date: string;
 }
+
+export interface FeedbackProps {
+  id: string;
+  stt: string;
+  content: string;
+  email: string;
+  phonenumber: string;
+  name: string;
+  date: string;
+  star: string;
+  type: "post" | "product";
+  topic: "comment" | "question";
+  url: string;
+  video?: string;
+  subimage?: Array<any>;
+}

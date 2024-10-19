@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+    scroll-behavior: smooth;
+}
+
+
 .truncate1 {
     display: -webkit-box;
     -webkit-box-orient: vertical;

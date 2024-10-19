@@ -2,19 +2,17 @@ export interface CategoryProps {
   id: string;
   stt: number;
   level0: string;
-  level1: Array<string>;
-  date: string;
-  group?: boolean;
-  grouplv1?: string;
-  grouplv2?: string;
-  grouplv0?: string;
-  trademarkName?: string;
+  level1: Array<any>;
+  trademark: boolean;
+  trademarkName: string;
   [key: string]: any;
+  date: string;
 }
 
 export interface SlideProps {
   id: string;
   image: string;
+  platform: "desktop" | "mobile";
   type?: string;
   url?: string;
   date: string;
