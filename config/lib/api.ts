@@ -73,11 +73,12 @@ export const findById = async (
   Id: any,
   Signal?: boolean
 ) => {
-  let firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${process.env.DB_URL}/databases/(default)/documents/${Collection}/${Id}`;
+  let firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/vpgens-e2128/databases/(default)/documents/${Collection}/${Id}`;
 
   try {
     const response = await fetch(firebaseEndpoint, {
-      next: { revalidate: Signal ? 0 : 1800 },
+      next: { tags: ["refetch"] },
+      cache: "force-cache",
     });
     if (!response.ok) {
       throw new Error("Network response was not ok.");
@@ -96,19 +97,23 @@ export const findById = async (
 
 export async function find(CollectionName: string, Signal?: boolean) {
   let firebaseEndpoint: string;
-  firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${process.env.DB_URL}/databases/(default)/documents/${CollectionName}`;
+  firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/vpgens-e2128/databases/(default)/documents/${CollectionName}`;
   try {
     const response = await fetch(firebaseEndpoint, {
-      next: { revalidate: Signal ? 0 : 1800 },
+      next: { tags: ["refetch"] },
       cache: "force-cache",
     });
 
     if (!response.ok) {
-      throw new Error("Network response was not ok.");
+      const errorText = await response.text();
+      throw new Error(
+        `Network response was not ok. Status: ${response.status}, Error: ${errorText}`
+      );
     }
+
     const data = await response.json();
 
-    const documents = data.documents.map((doc: any) => {
+    const documents = data?.documents?.map((doc: any) => {
       const formattedDoc: any = {
         id: doc.name.split("/").pop(),
       };
@@ -124,13 +129,15 @@ export async function find(CollectionName: string, Signal?: boolean) {
       return formattedDoc;
     });
 
-    documents.sort((a: any, b: any) => {
+    documents?.sort((a: any, b: any) => {
       return a.stt - b.stt;
     });
     return documents;
   } catch (error) {
     console.error("Lỗi khi lấy dữ liệu:", error);
+    // Optionally rethrow the error or return a default value
     // throw new Error("Failed to fetch data.");
+    return []; // Return an empty array or appropriate default value
   }
 }
 

@@ -232,7 +232,7 @@ const ProductDetail = ({
               </Link>
               <Link
                 className="flex flex-col text-center border font-bold py-2 border-mainOrange hover:bg-mainRed text-white duration-300 cursor-pointer bg-mainOrange"
-                href={`/lien-he`}
+                href={`/contact`}
               >
                 <span className="uppercase text-[13px]">Liên hệ</span>
                 <span className="text-[11px] d:block p:hidden">

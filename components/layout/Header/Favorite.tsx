@@ -1,5 +1,4 @@
 "use client";
-import { ProductProps } from "@assets/props";
 import { useUser } from "@context/UserProvider";
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
@@ -8,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import FavoriteCard from "./Favorite/FavoriteCard";
+import { ProductProps } from "@assets/props/PropsProduct";
 
 interface FavoriteProps {
   setIsOpen: (isOpen: any) => void;

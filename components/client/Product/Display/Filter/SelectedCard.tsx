@@ -1,4 +1,4 @@
-import { FilterItems, isFilterProps } from "@assets/props";
+import { isFilterProps } from "@assets/props/PropsProduct";
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
 

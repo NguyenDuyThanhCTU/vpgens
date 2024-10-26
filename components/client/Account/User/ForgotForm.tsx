@@ -1,5 +1,5 @@
 "use client";
-import { AccountProps, ForgotFormProps } from "@assets/props";
+import { AccountProps, ForgotFormProps } from "@assets/props/PropsAccount";
 import AccountInput from "@components/layout/Items/AccountInput";
 import { updateOne } from "@config/lib/api";
 import { notification } from "antd";

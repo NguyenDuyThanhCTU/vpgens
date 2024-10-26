@@ -7,6 +7,7 @@ import Cart from "@components/modal/Cart";
 import FavoriteModal from "@components/modal/Favorite";
 import QuickView from "@components/modal/QuickView";
 import RemoveFavor from "@components/modal/RemoveFavor";
+import VideoModal from "@components/modal/VideoModal";
 import { useStateProvider } from "@context/StateProvider";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -99,7 +100,7 @@ const Copyright = ({
           )}
         />
       )}
-
+      {isOpenModal?.Video?.state && <VideoModal />}
       <></>
     </>
   );

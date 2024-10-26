@@ -16,17 +16,28 @@ export default async function manifest() {
     url: item.url ? item.url : "/favicon.ico",
     id: item.id ? item.id : "/favicon.ico",
   }));
-  return {
-    name: Manifest?.name,
-    short_name: Manifest?.short_name,
-    description: Manifest?.description,
-    icons: icons,
-    theme_color: Manifest?.theme_color,
-    background_color: Manifest?.background_color,
-    start_url: Manifest?.start_url,
-    display: Manifest?.display,
-    orientation: Manifest?.orientation,
-    related_applications: RelatedApp,
-    scope: Manifest?.scope,
+  const manifest = {
+    name: Manifest?.name ? Manifest?.name : "",
+    short_name: Manifest?.short_name ? Manifest?.short_name : "",
+    description: Manifest?.description ? Manifest?.description : "",
+    icons: icons
+      ? icons
+      : [
+          {
+            src: "/favicon.ico",
+            sizes: "any",
+            type: "image/x-icon",
+          },
+        ],
+    theme_color: Manifest?.theme_color ? Manifest?.theme_color : "#fff",
+    background_color: Manifest?.background_color
+      ? Manifest?.background_color
+      : "#fff",
+    start_url: Manifest?.start_url ? Manifest?.start_url : "/",
+    display: Manifest?.display ? Manifest?.display : "standalone",
+    orientation: Manifest?.orientation ? Manifest?.orientation : "",
+    related_applications: RelatedApp ? RelatedApp : [],
+    scope: Manifest?.scope ? Manifest?.scope : "",
   };
+  return manifest;
 }

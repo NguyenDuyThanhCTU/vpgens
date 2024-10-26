@@ -1,4 +1,4 @@
-import { AccountProps, LoginFormProps } from "@assets/props";
+import { AccountProps, LoginFormProps } from "@assets/props/PropsAccount";
 import AccountInput from "@components/layout/Items/AccountInput";
 import { useUser } from "@context/UserProvider";
 import { notification } from "antd";

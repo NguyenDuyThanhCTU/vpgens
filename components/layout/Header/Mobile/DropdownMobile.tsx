@@ -34,12 +34,15 @@ const DropdownMobile = ({
               });
 
               return (
-                <div className="">
-                  <div
-                    key={idx}
-                    className="text-[16px] flex items-center justify-between w-full"
-                  >
-                    <Link href={`/products/${LV0Slug}`}> {item.level0}</Link>
+                <div className="" key={idx}>
+                  <div className="text-[16px] flex items-center justify-between w-full">
+                    <Link
+                      onClick={() => setDropdownMenu(false)}
+                      href={`/products/${LV0Slug}`}
+                    >
+                      {" "}
+                      {item.level0}
+                    </Link>
                     {item.level1 && item.level1.length > 0 && (
                       <IoMdArrowDropright
                         onClick={() => {
@@ -84,8 +87,7 @@ const DropdownMobile = ({
                                       });
                                       return (
                                         <Link
-                                          // href={`/products/${LV0Slug}?category=${LV1Slug}&filter=${LV2Slug}`}
-                                          href={`/products/${LV0Slug}?category=${LV1Slug}`}
+                                          href={`/products/${LV0Slug}?filter=${LV2Slug}`}
                                           onClick={() => setDropdownMenu(false)}
                                           className="text-gray-500"
                                           key={LV2idx}

@@ -133,11 +133,12 @@ export const Dropdown = ({
 
                           return (
                             <Link
-                              href={`${
-                                Parent === "products"
-                                  ? `/${Parent}/${LV1Slug}?category=${LV2Slug}`
-                                  : `/${Parent}?category=${LV1Slug}&filter=${LV2Slug}`
-                              }`}
+                              // href={`${
+                              //   Parent === "products"
+                              //     ? `/${Parent}/${LV1Slug}?category=${LV2Slug}`
+                              //     : `/${Parent}?category=${LV1Slug}&filter=${LV2Slug}`
+                              // }`}
+                              href={`/${Parent}/${LV1Slug}?category=${LV2Slug}`}
                               key={LV2idx}
                               className=" p-2 w-full hover:bg-mainOrange hover:text-white duration-300"
                             >

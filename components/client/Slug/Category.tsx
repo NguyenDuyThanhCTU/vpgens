@@ -42,6 +42,7 @@ const Category = ({ CategoryData, SimilarData, type }: Category) => {
               <div>
                 <h2 className=" text-[18px] uppercase text-mainOrange font-normal">
                   {type === "blogs" ? "Đừng bỏ lỡ" : "Bài viết liên quan"}
+                  {/* Bài viết liên quan */}
                 </h2>
                 <div className="mt-2 flex items-center gap-1">
                   <div className="w-3 h-[2px] bg-mainRed"></div>
@@ -53,7 +54,7 @@ const Category = ({ CategoryData, SimilarData, type }: Category) => {
                     <div key={idx} className="bg-mainBG relative">
                       <div className="p-4 grid grid-cols-3 items-center gap-3 pl-8">
                         <Link href={`/${item.url}`}>
-                          <div className="h-[70px] w-full rounded-md">
+                          <div className="h-[80px] w-full rounded-md">
                             <Image
                               src={item.image}
                               alt="blogs"
@@ -66,7 +67,7 @@ const Category = ({ CategoryData, SimilarData, type }: Category) => {
                         <div className="col-span-2">
                           <Link
                             href={`/${item.url}`}
-                            className="truncate2  text-[18px]"
+                            className="truncate2  text-[18px] hover:text-red-600 duration-300"
                           >
                             {item.title}
                           </Link>

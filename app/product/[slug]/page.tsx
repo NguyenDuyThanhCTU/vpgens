@@ -11,41 +11,32 @@ type ProductDetailProps = {
 };
 
 export async function generateMetadata({
-  searchParams,
+  params,
 }: ProductDetailProps): Promise<Metadata> {
-  const searchValue = searchParams.poid;
-
-  const products = await find("Products");
-  const Products = products?.find((item: any) => item.id == searchValue);
+  const Products: ProductProps[] = await find("Products");
+  const Data: any = Products?.find((item) => item.url === params.slug);
 
   return {
-    title: Products.title,
-    description: Products.description,
-    keywords: Products.keywords,
+    title: Data?.title,
+    description: Data?.description,
   };
 }
 export async function generateStaticParams() {
-  const Products: ProductProps[] = await find("Products");
-
-  return Products.map((item) => ({
-    slug: slugify(item.title ? item.title : "", {
-      lower: true,
-      locale: "vn",
-    }),
+  const res: ProductProps[] = await find("Products", true);
+  return res?.map((product) => ({
+    slug: product.url,
   }));
 }
-const ProductDetailPage = async ({
-  params,
-  searchParams,
-}: ProductDetailProps) => {
-  const searchValue = searchParams.poid;
-  const Data: ProductProps = await findById("Products", searchValue);
-  const Products = await find("Products");
+
+const ProductDetailPage = async ({ params }: ProductDetailProps) => {
+  const Products: ProductProps[] = await find("Products");
+  const Data: any = Products?.find((item) => item.url === params.slug);
+
   const ProductCategory = await find("ProductCategory");
   const Config = await find("Config");
   return (
     <div>
-      <ProductH1 Category={[]} slug="all" type={Data.title} />
+      <ProductH1 Category={[]} slug="all" type={Data?.title} />
       <div className="d:w-[1370px] d:mx-auto p:w-auto p:mx-2 py-5">
         <ProductDetail
           Data={Data}

@@ -1,5 +1,4 @@
 "use client";
-import { ContactProps, GlobalProps, SocialMediaProps } from "@assets/props";
 import { LocalFindById } from "@components/items/Handle";
 import { HeaderItemsProps } from "@components/layout/Header";
 import { useStateProvider } from "@context/StateProvider";
@@ -12,12 +11,14 @@ import { GrSend } from "react-icons/gr";
 import { RxCross2 } from "react-icons/rx";
 import slugify from "slugify";
 import { typingEffect } from "@components/items/ClientHandle";
+import { ContactProps, SocialMediaProps } from "@assets/props/PropsConfig";
 
 interface MenuProps {
   menuItems: HeaderItemsProps[];
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-const Menu = ({ menuItems }: MenuProps) => {
+const Menu = ({ menuItems, setIsOpen }: MenuProps) => {
   const [isOpenMenu, setOpenMenu] = useState({
     lv1: "",
     lv2: "",
@@ -44,7 +45,7 @@ const Menu = ({ menuItems }: MenuProps) => {
     },
     {
       icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.webp?alt=media&token=dd0a7105-47c9-4852-ae3b-9dcd0c80841e",
-      link: SocialMedia?.Youtube ? SocialMedia?.Youtube : "",
+      link: SocialMedia?.youtube ? SocialMedia?.youtube : "",
     },
     {
       icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/z5851627838739_4a80404aef3cea1f5a9d6ed52df04917.png?alt=media&token=69e862a4-4aee-411e-9c65-858ed2adb892",
@@ -69,6 +70,7 @@ const Menu = ({ menuItems }: MenuProps) => {
               <div key={idx}>
                 <div className="flex justify-between w-full items-center">
                   <Link
+                    onClick={() => setIsOpen(false)}
                     href={`${
                       item.value === "products"
                         ? `/products/all`
@@ -117,6 +119,7 @@ const Menu = ({ menuItems }: MenuProps) => {
                           <div key={LV1idx}>
                             <div className="flex justify-between w-full items-center">
                               <Link
+                                onClick={() => setIsOpen(false)}
                                 href={`${
                                   item.value === "products"
                                     ? `/${item.value}/${LV1Slug}`
@@ -166,6 +169,7 @@ const Menu = ({ menuItems }: MenuProps) => {
                                     });
                                     return (
                                       <Link
+                                        onClick={() => setIsOpen(false)}
                                         href={`${
                                           item.value === "products"
                                             ? `/${item.value}/${LV1Slug}?category=${LV2Slug}`
@@ -195,9 +199,10 @@ const Menu = ({ menuItems }: MenuProps) => {
           Hỗ trợ 24/7
         </h3>
         <p className="text-gray-500">
-          Đừng ngừng ngại liên hệ chúng tôi, hổ trợ 24/7 từ thứ 2 - thứ 7.
+          Đừng ngần ngại liên hệ chúng tôi, hổ trợ 24/7 từ thứ 2 - thứ 7.
           Hotline:{" "}
           <Link
+            onClick={() => setIsOpen(false)}
             className="text-blink hover:underline"
             href={`tel:${ContactData?.Hotline}`}
           >
@@ -220,6 +225,7 @@ const Menu = ({ menuItems }: MenuProps) => {
         <div className="flex gap-4">
           {SocialItems.map((item, idx) => (
             <Link
+              onClick={() => setIsOpen(false)}
               href={item.link}
               target="_blank"
               key={idx}

@@ -7,6 +7,7 @@ import "swiper/css/effect-fade";
 import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import { SlideProps } from "@assets/props/Props";
+import Link from "next/link";
 
 interface HomeSlideProps {
   Data: SlideProps[];
@@ -42,7 +43,7 @@ const HomeSlide = ({ Data }: HomeSlideProps) => {
           effect={"fade"}
           slidesPerView={1}
           autoplay={{
-            delay: 5000,
+            delay: 10000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -54,13 +55,21 @@ const HomeSlide = ({ Data }: HomeSlideProps) => {
         >
           {desktop.map((item, idx) => (
             <SwiperSlide className="h-full w-full" key={idx}>
-              <Image
-                src={item.image}
-                alt="banner"
-                width={2000}
-                height={1000}
-                className="w-full h-full bordr"
-              />
+              <Link
+                href={`${
+                  item.type === "Sản phẩm"
+                    ? `/product/${item.url}`
+                    : `/${item.url}`
+                }`}
+              >
+                <Image
+                  src={item.image}
+                  alt="banner"
+                  width={2000}
+                  height={1000}
+                  className="w-full h-full"
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -82,13 +91,21 @@ const HomeSlide = ({ Data }: HomeSlideProps) => {
         >
           {mobile.map((item, idx) => (
             <SwiperSlide className="h-full w-full" key={idx}>
-              <Image
-                src={item.image}
-                alt="banner"
-                width={1000}
-                height={500}
-                className="w-full h-full bordr"
-              />
+              <Link
+                href={`${
+                  item.type === "Sản phẩm"
+                    ? `/product/${item.url}`
+                    : `/${item.url}`
+                }`}
+              >
+                <Image
+                  src={item.image}
+                  alt="banner"
+                  width={1000}
+                  height={500}
+                  className="w-full h-full bordr"
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

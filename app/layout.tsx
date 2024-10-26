@@ -11,6 +11,9 @@ import { CategoryProps } from "@assets/props/Props";
 import { UserProvider } from "@context/UserProvider";
 import Header from "@components/layout/Header";
 import Copyright from "@components/layout/Copyright";
+import Footer from "@components/layout/Footer";
+import Hotline from "@components/layout/Hotline";
+import ShopMobile from "@components/layout/Header/Mobile/ShopMobile";
 
 export default async function RootLayout({
   children,
@@ -38,6 +41,9 @@ export default async function RootLayout({
             <main className="d:mt-[112px] p:mt-[91px]  d:text-[16px] p:text-[13px] ">
               {children}
             </main>
+            <Footer />
+            <Hotline />
+            <ShopMobile />
             <Copyright
               Products={Products}
               Config={Config}

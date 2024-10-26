@@ -6,14 +6,14 @@ import { BsNewspaper } from "react-icons/bs";
 import { PiLampFill } from "react-icons/pi";
 import Link from "next/link";
 import { useStateProvider } from "@context/StateProvider";
-import { ContactProps, GlobalProps } from "@assets/props";
 import { LocalFindById } from "@components/items/Handle";
+import { ContactProps } from "@assets/props/PropsConfig";
 const ShopMobile = () => {
   const { isGlobal } = useStateProvider();
 
   const ContactData: ContactProps = LocalFindById(isGlobal?.Config, "contact");
   return (
-    <div className="p:block d:hidden fixed bottom-0 w-full bg-mainOrange text-white">
+    <div className="p:block d:hidden fixed bottom-0 w-full bg-mainOrange text-white z-50">
       <div className="grid grid-cols-4  h-[60px]">
         <Link
           href={`/`}
@@ -23,14 +23,14 @@ const ShopMobile = () => {
           <span className="text-[12px]">Trang chủ</span>
         </Link>
         <Link
-          href={`/gioi-thieu`}
+          href={`/about-us`}
           className="border-r border-white flex flex-col items-center h-full justify-center"
         >
           <PiLampFill className="text-[25px]" />
           <span className="text-[12px]">Giới thiệu</span>
         </Link>
         <Link
-          href={`/blogs/tin-tuc`}
+          href={`/blogs/tin-tuc-va-su-kien`}
           className="border-r border-white flex flex-col items-center h-full justify-center"
         >
           <BsNewspaper className="text-[25px]" />

@@ -31,15 +31,10 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const posts: PostProps[] = await find("Posts", true);
-  const PostSlug = posts?.filter(
-    (item) =>
-      item.title !== undefined &&
-      item.title !==
-        `"truoc"-va-"sau"-khi-cai-tao-noi-that-can-ho-cu-3-phong-ngu`
-  );
-  return PostSlug.map((post) => ({
-    slug: slugify(post.title ? post.title : "", { lower: true, locale: "vn" }),
+  const res: PostProps[] = await find("Posts", true);
+  const resFilter = res.filter((item) => item.id !== "introduction");
+  return resFilter.map((post) => ({
+    slug: post.url,
   }));
 }
 

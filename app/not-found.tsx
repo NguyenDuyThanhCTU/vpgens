@@ -1,6 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+
+export const metadata: Metadata = {
+  title: "404 Not found",
+};
 
 export default async function NotFound() {
   return (
@@ -13,7 +18,7 @@ export default async function NotFound() {
             fill
             sizes="(min-width: 808px) 50vw , 100vw"
             style={{
-              objectFit: 'contain',
+              objectFit: "contain",
             }}
           />
         </div>

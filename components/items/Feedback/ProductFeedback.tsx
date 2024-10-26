@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { FaRegComments, FaRegEdit } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
 import { useStateProvider } from "@context/StateProvider";
-import { FeedbackProps } from "@assets/props";
 import { getHighestNumber } from "@components/items/Handle";
 import { CommentForm, QuestionForm } from "./Items/Form";
+import { FeedbackProps } from "@assets/props/PropsPlugin";
 
 const ProductFeedback = ({
   Data,

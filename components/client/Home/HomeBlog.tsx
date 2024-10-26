@@ -6,10 +6,8 @@ interface HomeBlogProps {
   Data: PostProps[];
 }
 const HomeBlog = ({ Data }: HomeBlogProps) => {
-  // const newPosts = Data?.reverse().filter(
-  //   (item) => item.level0 === "kinh-nghiem-heo-giong"
-  // );
-  const newPosts = Data.reverse();
+  const newPosts = Data?.reverse().filter((item) => item.id !== "introductory");
+
   return (
     <div
       id="news"
@@ -30,7 +28,7 @@ const HomeBlog = ({ Data }: HomeBlogProps) => {
                   alt="posts"
                   width={800}
                   height={800}
-                  className="w-full h-full object-cover rounded-md hover:scale-110 duration-300"
+                  className="w-full h-full object-contain rounded-md hover:scale-110 duration-300"
                 />
               </div>
             </Link>
@@ -64,7 +62,7 @@ const HomeBlog = ({ Data }: HomeBlogProps) => {
                   alt="posts"
                   width={200}
                   height={200}
-                  className="h-full w-full object-cover rounded-lg hover:scale-110 duration-300"
+                  className="h-full w-full object-contain rounded-lg hover:scale-110 duration-300"
                 />
               </Link>
               <div className="col-span-3 gap-5">

@@ -12,24 +12,21 @@ const Footer = () => {
   });
   const FooterItems = [
     {
-      label: "Kinh nghiệm Thiết kế, Thi Công",
-      value: "blogs/kinh-nghiem",
+      label: "Kinh nghiệm heo giống",
+      value: "blogs/kinh-nghiem-heo-giong",
     },
     {
-      label: "Trước và Sau Thi công",
-      value: "blogs/truoc-va-sau-thi-cong",
+      label: "Hình ảnh và Video",
+      value: "album",
     },
     {
-      label: "Blogs",
-      value: "blogs/tin-tuc",
+      label: "Tin tức và Sự kiện",
+      value: "blogs/tin-tuc-va-su-kien",
     },
-    {
-      label: " Chủng loại gỗ",
-      value: "blogs/chung-loai-go",
-    },
+
     {
       label: "Liên hệ",
-      value: "lien-he",
+      value: "contact",
     },
   ];
   return (
@@ -68,12 +65,12 @@ const Footer = () => {
             <div
               className={`animate__animated ${
                 isOpenMenu.lv1 === "Dịch vụ khách hàng"
-                  ? " block animate__fadeIn"
-                  : "d:flex p:d:flex p:hidden"
+                  ? "flex animate__fadeIn"
+                  : "d:flex p:hidden"
               } mt-4  flex-col gap-1 text-[15px]`}
             >
               {[
-                "Giới thiệu",
+                "Về chúng tôi",
                 "Chính sách đổi trả",
                 "Chính sách bảo mật",
                 "Chính sách khiếu nại",
@@ -124,22 +121,24 @@ const Footer = () => {
             <div
               className={`animate__animated ${
                 isOpenMenu.lv1 === "Thông tin"
-                  ? " block animate__fadeIn"
+                  ? " flex animate__fadeIn"
                   : "d:flex p:hidden"
               } mt-4  flex-col gap-1 text-[15px]`}
             >
               {[
                 "Tất cả sản phẩm",
-                "Nội Thất Phòng Khách",
-                "Nội Thất Phòng Ngủ",
-                "Nội Thất Nhà Bếp",
+                "Giống heo sinh sản cao",
+                "Giống heo thích nghi cao",
+                "Giống heo tăng trọng tốt",
               ].map((item, idx) => {
                 const ItemSlug = slugify(item, { locale: "vi", lower: true });
                 return (
                   <Link
                     className="hover:text-blue-600 duration-300"
                     href={
-                      item === "" ? `/products/all` : `/products/${ItemSlug}`
+                      item === "Tất cả sản phẩm"
+                        ? `/products/all`
+                        : `/products/${ItemSlug}`
                     }
                     key={idx}
                   >
@@ -182,7 +181,7 @@ const Footer = () => {
             <div
               className={`animate__animated ${
                 isOpenMenu.lv1 === "Danh mục cho bạn"
-                  ? " block animate__fadeIn"
+                  ? " flex animate__fadeIn"
                   : "d:flex p:hidden"
               } mt-4  flex-col gap-1 text-[15px]`}
             >
@@ -236,13 +235,12 @@ const Footer = () => {
                   : "d:block p:hidden"
               } mt-4 text-[15px]`}
             >
-              <span className=" uppercase ">Nội thất Ao Vua</span> tự hào mang
-              đến sự khác biệt trong từng chi tiết, tạo nên một phong cách riêng
-              biệt cho bày trí nội thất, kiến tạo nên không gian sống tinh tế và
-              sang trọng. Trên tất cả, sự tin tưởng và hài lòng của khách hàng
-              là tôn chỉ hoạt động hàng đầu của chúng tôi. Hãy để chúng tôi đồng
-              hành cùng bạn trên hành trình biến ngôi nhà mơ ước thành hiện
-              thực.
+              Hằng năm Trại{" "}
+              <span className=" uppercase ">heo giống Việt Thái</span> cung ứng
+              ra thị trường hướng khoảng 5000 ngàn con heo giống các loại, từ
+              nguồn giống heo cụ kỵ, ông bà đa dạng được Việt Thái nhập về từ
+              các trung tâm, trại giống hàng đầu thế giới như Anh, Đan Mạch, Mỹ,
+              Canada, Đài Loan, Thái Lan.
             </p>
           </div>
         </div>

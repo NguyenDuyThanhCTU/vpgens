@@ -1,5 +1,4 @@
 "use client";
-import { CategoryProps, ProductProps } from "@assets/props";
 import React, { use, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import SortTable from "./Display/SortTable";
@@ -7,6 +6,8 @@ import { useStateProvider } from "@context/StateProvider";
 import Filter from "./Display/Filter";
 import { Pagination, PaginationProps } from "antd";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { ProductProps } from "@assets/props/PropsProduct";
+import { CategoryProps } from "@assets/props/Props";
 
 interface FilterItems {
   label: string;

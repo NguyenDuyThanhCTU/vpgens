@@ -1,11 +1,13 @@
 "use client";
-import { CategoryProps, isFilterProps } from "@assets/props";
+
 import React, { useRef, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import slugify from "slugify";
 import SelectedCard from "./Filter/SelectedCard";
 import { StickyTop } from "@components/items/ClientHandle";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { CategoryProps } from "@assets/props/Props";
+import { isFilterProps } from "@assets/props/PropsProduct";
 
 interface FilterProps {
   Trademark?: CategoryProps;

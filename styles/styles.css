@@ -99,3 +99,15 @@ body {
 .ant-image {
     width: 100%;
 }
+
+
+
+.heading-redborder {
+    font-family: "Roboto Slab", serif;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(36, 36, 36) 1px 2px 3px;
+    -webkit-text-stroke: 1px rgb(145, 23, 16);
+}

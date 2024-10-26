@@ -15,18 +15,16 @@ export default async function robots() {
 
   const Sitemap = Robots?.sitemap.map((item) => item);
   const RobotsRs = {
-    rules: Rules,
-    sitemap: Sitemap,
-    host: Robots?.host,
-  };
-  return RobotsRs.rules || RobotsRs.host || RobotsRs.sitemap
-    ? RobotsRs
-    : {
-        rules: {
+    rules: Rules
+      ? Rules
+      : {
           userAgent: "*",
           allow: "/",
           disallow: "/private/",
         },
-        sitemap: "https://acme.com/sitemap.xml",
-      };
+    sitemap: Sitemap ? Sitemap : "https://acme.com/sitemap.xml",
+    host: Robots?.host,
+  };
+
+  return RobotsRs;
 }

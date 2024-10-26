@@ -67,7 +67,7 @@ const HomeCollection = ({ Data }: { Data: ProductProps[] }) => {
 
           <div className="mt-5 d:text-[20px] p:text-[15px]">
             <div className="grid p:grid-cols-1 d:grid-cols-2 gap-8">
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 p:gap-2 d:gap-8">
                 <ScrollLink
                   to="collection"
                   duration={500}
@@ -199,7 +199,7 @@ const HomeCollection = ({ Data }: { Data: ProductProps[] }) => {
                   className="w-full h-full hover:scale-110 duration-1000"
                 />
               </ScrollLink>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 p:gap-2 d:gap-8">
                 <ScrollLink
                   to="hottrend"
                   duration={500}

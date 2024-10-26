@@ -1,4 +1,4 @@
-import { AccountProps } from "@assets/props";
+import { AccountProps } from "@assets/props/PropsAccount";
 import React from "react";
 
 interface ProfileProps {

@@ -66,7 +66,7 @@ const Header = ({
     },
     {
       label: "Về chúng tôi",
-      value: "ve-chung-toi",
+      value: "about-us",
       // children: PostCategory?.find((item) => item.level0 === "Kinh nghiệm"),
     },
 
@@ -81,7 +81,7 @@ const Header = ({
     },
     {
       label: "Hình ảnh và Video",
-      value: "hinh-anh-va-video",
+      value: "album",
       // children: PostCategory?.find(
       //   (item) => item.level0 === "Trước và Sau Thi công"
       // ),
@@ -97,7 +97,7 @@ const Header = ({
     },
     {
       label: "Liên hệ",
-      value: "lien-he",
+      value: "contact",
       // children: {},
     },
   ];
@@ -141,7 +141,11 @@ const Header = ({
           <div className="h-[68px] flex justify-center">
             <Link href={`/`} className="">
               <Image
-                src={ContactData?.LogoWebsite}
+                src={
+                  ContactData?.LogoWebsite
+                    ? ContactData?.LogoWebsite
+                    : "https://firebasestorage.googleapis.com/v0/b/vpgens-e2128.appspot.com/o/avatar%2FRHYDinnC666liHhyRMcyvr2fuiiYbKrRMFs6gOCmxQOtrCiMeA.jpg?alt=media&token=69ada088-7c40-483b-9475-5b635892cbdb"
+                }
                 alt="logo"
                 width={300}
                 height={300}
@@ -180,10 +184,13 @@ const Header = ({
                       className="cursor-pointer hover:bg-gray-100 duration-300"
                     >
                       <div className="py-2 px-3 flex items-center gap-3">
-                        <Link href={`/product/${item.url}`}>
+                        <Link
+                          href={`/product/${item.url}`}
+                          onClick={() => setSearch("")}
+                        >
                           <div className="h-10 w-10">
                             <Image
-                              src={item.image}
+                              src={item?.image}
                               alt="logo"
                               width={100}
                               height={100}
@@ -194,6 +201,7 @@ const Header = ({
                         <div>
                           <Link
                             href={`/product/${item.url}`}
+                            onClick={() => setSearch("")}
                             className="hover:text-blue-600 duration-300"
                           >
                             {item.title}
@@ -304,7 +312,15 @@ const Header = ({
               <div>
                 <div
                   className="flex items-center justify-start gap-1  pr-8 pl-2 border-2 border-mainRed text-mainRed cursor-pointer bg-white"
-                  onClick={() => setOpenVideo(true)}
+                  onClick={() => {
+                    setOpenModal({
+                      ...isOpenModal,
+                      Video: {
+                        state: true,
+                        url: "https://www.youtube.com/embed/cqcvtcHdt1w",
+                      },
+                    });
+                  }}
                 >
                   <GoDotFill className="dot-blink" />
                   Kết nối
@@ -328,7 +344,7 @@ const Header = ({
                 <User Accounts={Accounts} setIsOpen={setOpenUser} />
               </Modal>
 
-              <Modal
+              {/* <Modal
                 open={isOpenVideo}
                 onCancel={() => setOpenVideo(false)}
                 className="reset_Modal"
@@ -342,7 +358,7 @@ const Header = ({
                   <iframe
                     className="w-full "
                     height={500}
-                    src="https://www.youtube.com/embed/cqcvtcHdt1w?si=MgFqrIaTfuo2Ic2f&autoplay=1"
+                    src=""
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   ></iframe>
@@ -353,7 +369,7 @@ const Header = ({
                     <RxCross2 />
                   </div>
                 </div>
-              </Modal>
+              </Modal> */}
             </>
           ) : (
             ""

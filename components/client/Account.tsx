@@ -4,10 +4,11 @@ import { BiUser } from "react-icons/bi";
 import Profile from "./Account/Profile";
 import History from "./Account/History";
 import Address from "./Account/Address";
-import { AccountProps } from "@assets/props";
-import { usePathname, useRouter } from "next/navigation";
+
+import { useRouter } from "next/navigation";
 import User from "./Account/User";
 import { useUser } from "@context/UserProvider";
+import { AccountProps } from "@assets/props/PropsAccount";
 
 const Account = ({ Data }: { Data: AccountProps[] }) => {
   const [isCurrentFeature, setCurrentFeature] = useState("Thông tin tài khoản");

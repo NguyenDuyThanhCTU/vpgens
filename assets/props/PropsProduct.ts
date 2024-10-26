@@ -25,9 +25,9 @@ export interface ProductProps {
   level0: string;
   date: string;
   group?: boolean;
-  grouplv0?: string;
-  grouplv1?: string;
-  grouplv2?: any;
+  grouplv0: string;
+  grouplv1: string;
+  grouplv2: string;
   branches?: string;
   price?: string;
   subimage?: {
@@ -38,21 +38,16 @@ export interface ProductProps {
   content?: string;
   description?: string;
   detail?: string;
+  latest?: boolean;
   describe?: string;
   level1?: string;
-  level2?: string;
+  level2?: Array<any>;
   Keyword?: [] | any;
   discount?: string;
   discountedAmount?: string;
   newPrice?: string;
-  subproduct?: [];
-  latest?: boolean;
-  addfield: boolean;
-  field1: string;
-  fiedl2: string;
-  field3: string;
-  fiedl4: string;
-  fiedl5: string;
+  trademark: boolean;
+  trademarkName: string;
 }
 
 export interface ProductDetailProps extends ProductProps {
@@ -80,4 +75,15 @@ export interface SaleDataProps extends ProductProps {
   // discount: string;
   // discountedAmount: string;
   // newPrice: string;
+}
+
+export interface FilterItems {
+  label: string;
+  value: string;
+}
+
+export interface isFilterProps {
+  category: FilterItems[];
+  group: FilterItems[];
+  trademark: FilterItems[];
 }

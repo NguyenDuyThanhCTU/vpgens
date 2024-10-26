@@ -32,7 +32,7 @@ const HomePage = async () => {
 
   return (
     <div className="">
-      {/* <HomeSlide Data={Slides} />
+      <HomeSlide Data={Slides} />
       <>
         <HomeCollection Data={Products} />
         <HomeTrend Data={Products} />
@@ -42,8 +42,7 @@ const HomePage = async () => {
       <HomeBlog Data={Posts} />
       <HomeStore />
       <HomePolicy Config={Config} />
-      <HomeNewLetter /> */}
-      <HomeProductTab Data={Products} />
+      <HomeNewLetter />
     </div>
   );
 };

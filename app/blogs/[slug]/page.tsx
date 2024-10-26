@@ -34,16 +34,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const Category: CategoryProps[] = await find("PostCategory");
-
-  return Category.map((item) => ({
-    slug: slugify(item.level0 ? item.level0 : "", {
-      lower: true,
-      locale: "vn",
-    }),
-  }));
-}
+// export async function generateStaticParams() {
+//   const res: CategoryProps[] = await find("PostCategory", true);
+//   const slugRes = res.map((items) =>
+//     slugify(items.level0, { locale: "vi", lower: true })
+//   );
+//   return slugRes.map((res) => ({
+//     slug: res,
+//   }));
+// }
 
 const BlogPage = async ({ params, searchParams }: BlogPageProps) => {
   const searchFilterParams: any = searchParams.filter;
@@ -70,6 +69,7 @@ const BlogPage = async ({ params, searchParams }: BlogPageProps) => {
       }
     }
   }
+  const SimilarData = Posts?.filter((item: any) => item.level0 == params.slug);
 
   return (
     <div>
@@ -90,7 +90,7 @@ const BlogPage = async ({ params, searchParams }: BlogPageProps) => {
         <div className="">
           <Category
             CategoryData={PostCategory}
-            SimilarData={Posts}
+            SimilarData={SimilarData}
             type="blogs"
           />
         </div>

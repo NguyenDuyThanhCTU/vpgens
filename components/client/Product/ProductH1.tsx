@@ -1,5 +1,5 @@
 "use client";
-import { CategoryProps } from "@assets/props";
+import { CategoryProps } from "@assets/props/Props";
 import { ProductTitle, ProductTitle1 } from "@components/items/HandleMetadata";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -10,6 +10,7 @@ interface ProductH1Props {
   FilterParams?: any;
   Category: CategoryProps[];
   slug: string;
+  search?: string;
   type?: string;
 }
 export interface TitleDataProps {
@@ -23,6 +24,7 @@ const ProductH1 = ({
   FilterParams,
   Category,
   slug,
+  search,
   type,
 }: ProductH1Props) => {
   let TitleData: TitleDataProps = ProductTitle(
@@ -36,6 +38,9 @@ const ProductH1 = ({
   let TitleData1: TitleDataProps = ProductTitle1(searchParams, Group, slug);
   if (slug === "all") {
     TitleData.Slug = "Tất cả sản phẩm";
+    if (search) {
+      TitleData.Slug = `Kết quả tìm kiếm cho từ khóa "${search}"`;
+    }
   }
   return (
     <div

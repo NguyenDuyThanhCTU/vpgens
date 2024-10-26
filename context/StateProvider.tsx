@@ -41,6 +41,10 @@ interface OpenModalProps {
   cart: boolean;
   RemoveFavor: boolean;
   AddCart: boolean;
+  Video: {
+    state: boolean;
+    url: string;
+  };
 }
 
 interface GlobalProps {
@@ -91,6 +95,10 @@ export const StateContext = createContext<StateContextType>({
     cart: false,
     RemoveFavor: false,
     AddCart: false,
+    Video: {
+      state: false,
+      url: "",
+    },
   },
   setOpenModal: () => {},
 });
@@ -111,6 +119,10 @@ export const StateProvider = ({ children, Config }: Props) => {
     cart: false,
     RemoveFavor: false,
     AddCart: false,
+    Video: {
+      state: false,
+      url: "",
+    },
   });
   const [isGlobal, setGlobal] = useState<GlobalProps>({
     Config: [],

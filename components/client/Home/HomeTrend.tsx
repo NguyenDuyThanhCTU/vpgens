@@ -8,7 +8,7 @@ const HomeTrend = ({ Data }: { Data: ProductProps[] }) => {
 
   async function refetch1() {
     "use server";
-    revalidateTag("test");
+    revalidateTag("refetch");
   }
   return (
     <div className="py-10" id="hottrend">

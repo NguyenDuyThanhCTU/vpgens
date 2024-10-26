@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import LoginForm from "./User/LoginForm";
 import RegisterForm from "./User/RegisterForm";
 
-import { AccountProps } from "@assets/props";
 import { getHighestNumber } from "@components/items/Handle";
 import ForgotForm from "./User/ForgotForm";
+import { AccountProps } from "@assets/props/PropsAccount";
 
 interface UserProps {
   Accounts: AccountProps[];

@@ -62,15 +62,17 @@ const Mobile = ({
       } duration-300 fixed w-full bg-white d:hidden p:block z-50`}
     >
       <div className="h-[51px] bg-white  text-[22px] items-center justify-between px-3 grid grid-cols-2">
-        <div className="h-[70%]">
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/Your%20paragraph%20text1231.jpg?alt=media&token=351f8eaa-52ce-427c-acfb-1e7cf1d31faa"
-            alt="logo"
-            width={300}
-            height={300}
-            className="w-full h-full object-contain"
-          />
-        </div>
+        <Link href={`/`}>
+          <div className="h-[70%]">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/vpgens-e2128.appspot.com/o/footer-logo.jpg?alt=media&token=dbf04f7b-a7b9-419f-9f84-e03b0a44c946"
+              alt="logo"
+              width={300}
+              height={300}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </Link>
         <div className="flex items-center justify-between">
           <div>
             {CurrentUser.checked ? (
@@ -147,7 +149,7 @@ const Mobile = ({
           placement="left"
           className="reset_Drawer"
         >
-          <Menu menuItems={menuItems} />
+          <Menu menuItems={menuItems} setIsOpen={setOpenMenu} />
         </Drawer>
       </>
     </div>

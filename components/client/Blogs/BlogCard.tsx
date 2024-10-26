@@ -11,7 +11,7 @@ const BlogCard = ({ Data }: BlogCardProps) => {
     <div className="bg-mainBG rounded-md">
       <div className="p:p-5 d:p-10">
         <Link href={`/${Data?.url}`}>
-          <div className="p:h-[100px] d:h-[270px] overflow-hidden rounded-md">
+          <div className="h overflow-hidden rounded-md">
             <Image
               src={Data?.image}
               alt="blog"

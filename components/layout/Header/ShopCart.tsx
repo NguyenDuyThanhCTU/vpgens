@@ -1,5 +1,4 @@
 "use client";
-import { productBillProps, ProductProps } from "@assets/props";
 import { useStateProvider } from "@context/StateProvider";
 import { useUser } from "@context/UserProvider";
 import Image from "next/image";
@@ -10,6 +9,8 @@ import { RxCross2 } from "react-icons/rx";
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 import { Badge } from "antd";
 import { typingEffect } from "@components/items/ClientHandle";
+import { ProductProps } from "@assets/props/PropsProduct";
+import { productBillProps } from "@assets/props/PropsPayment";
 interface ShopCartProps {
   setIsOpen: (isOpen: any) => void;
   Data: ProductProps[];

@@ -6,8 +6,8 @@ import LoginForm from "./User/LoginForm";
 import { usePathname, useSearchParams } from "next/navigation";
 import RegisterForm from "./User/RegisterForm";
 import ForgotForm from "./User/ForgotForm";
-import { AccountProps } from "@assets/props";
 import { getHighestNumber } from "@components/items/Handle";
+import { AccountProps } from "@assets/props/PropsAccount";
 
 interface UserProps {
   Accounts: AccountProps[];

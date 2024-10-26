@@ -1,4 +1,4 @@
-import { AccountProps, RegisterFormProps } from "@assets/props";
+import { AccountProps, RegisterFormProps } from "@assets/props/PropsAccount";
 import AccountInput from "@components/layout/Items/AccountInput";
 import { insertAndCustomizeId } from "@config/lib/api";
 import { notification, Radio } from "antd";

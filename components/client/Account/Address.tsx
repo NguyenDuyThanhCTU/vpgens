@@ -1,5 +1,4 @@
 "use client";
-import { AddressProps } from "@assets/props";
 import UserInput from "@components/layout/Items/UserInput";
 import React, { useState } from "react";
 import AddressDropdown from "./Address/AddressDropdown";
@@ -8,6 +7,7 @@ import { updateOne } from "@config/lib/api";
 import { notification } from "antd";
 import { useRouter } from "next/navigation";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { AddressProps } from "@assets/props/PropsAccount";
 
 export const AddressCard = ({ Address }: { Address: AddressProps }) => {
   const CardItems = [

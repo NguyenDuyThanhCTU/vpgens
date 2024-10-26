@@ -1,7 +1,4 @@
-import { ProductProps } from "@assets/props";
-import AddCart from "@components/items/Modal/AddCart";
-import RemoveFavor from "@components/items/Modal/RemoveFavor";
-import QuickView from "@components/items/QuickView/QuickView";
+import { ProductProps } from "@assets/props/PropsProduct";
 import { useStateProvider } from "@context/StateProvider";
 import { useUser } from "@context/UserProvider";
 import { Modal } from "antd";
