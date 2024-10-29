@@ -264,7 +264,7 @@ const ProductDetail = ({
             <div className="ml-5 ck-content">
               <ul>
                 <li>
-                  &nbsp;khi mua heo giống tại trang trại heo giống Việt Thái, bà
+                  &nbsp;khi mua tinh heo tại trang trại heo giống Việt Thái, bà
                   con chăn nuôi hoàn toàn có thể yên tâm về chất lượng heo
                   giống, dịch vụ hỗ trợ và giá cả. Bà con sẽ có thể tăng lợi
                   nhuận kinh tế hiệu quả từ việc chăn nuôi heo.

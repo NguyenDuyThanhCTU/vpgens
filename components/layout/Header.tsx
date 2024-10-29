@@ -133,9 +133,10 @@ const Header = ({
   return (
     <>
       <div
-        className={`${
-          scrollTop > lastScrollTop ? " -top-[112px]" : "top-0"
-        } fixed w-full bg-white d:block p:hidden duration-300 z-20`}
+        className={`top-0 fixed w-full bg-white d:block p:hidden duration-300 z-20`}
+        // className={`${
+        //   scrollTop > lastScrollTop ? " -top-[112px]" : "top-0"
+        // } fixed w-full bg-white d:block p:hidden duration-300 z-20`}
       >
         <div className="h-[68px] d:w-[1370px] d:mx-auto grid grid-cols-4   gap-10 ">
           <div className="h-[68px] flex justify-center">
