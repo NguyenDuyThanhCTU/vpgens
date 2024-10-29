@@ -58,7 +58,7 @@ const Menu = ({ menuItems, setIsOpen }: MenuProps) => {
       <div>
         <div className="flex justify-between px-5 text-[24px] items-center py-2 border-b">
           <h3 className="font-normal">Menu</h3>
-          <div>
+          <div onClick={() => setIsOpen(false)}>
             <RxCross2 />
           </div>
         </div>
