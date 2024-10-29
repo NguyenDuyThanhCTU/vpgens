@@ -29,13 +29,13 @@ const IntroSection = () => {
       <div className="py-10 grid p:grid-cols-1 d:grid-cols-3 d:w-[1300px] d:mx-auto p:w-auto p:mx-2 gap-5 items-center">
         <div className="flex flex-col gap-10">
           <p>
-            Hằng năm Trại heo giống Việt Thái cung ứng ra thị trường hướng
+            Hằng năm Trang Trại heo giống Việt Thái cung ứng ra thị trường hướng
             khoảng 5000 ngàn con heo giống các loại, từ nguồn giống heo cụ kỵ,
             ông bà đa dạng được Việt Thái nhập về từ các trung tâm, trại giống
             hàng đầu thế giới.
           </p>
           <p>
-            Trang trại heo giống Việt Thái sẽ trở thành nhà cung cấp heo giống
+            Trang Trại heo giống Việt Thái sẽ trở thành nhà cung cấp heo giống
             hàng đầu Việt Nam, góp phần nâng cao hiệu quả chăn nuôi và phát
             triển ngành chăn nuôi bền vững.
           </p>

@@ -8,7 +8,7 @@ import { GoPlus } from "react-icons/go";
 import { RxCross2 } from "react-icons/rx";
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 import { Badge } from "antd";
-import { typingEffect } from "@components/items/ClientHandle";
+import { useTypingEffect } from "@components/items/ClientHandle";
 import { ProductProps } from "@assets/props/PropsProduct";
 import { productBillProps } from "@assets/props/PropsPayment";
 interface ShopCartProps {
@@ -255,7 +255,7 @@ const ShopCart = ({ setIsOpen, Data }: ShopCartProps) => {
             <span>Thêm ghi chú</span>
             <textarea
               value={Bill.note}
-              placeholder={typingEffect(texts, 50)}
+              placeholder={useTypingEffect(texts, 50)}
               className="border p-2 outline-none text-black"
               onChange={(e) => setBill({ ...Bill, note: e.target.value })}
             />

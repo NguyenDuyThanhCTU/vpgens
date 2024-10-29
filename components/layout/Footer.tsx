@@ -235,7 +235,7 @@ const Footer = () => {
                   : "d:block p:hidden"
               } mt-4 text-[15px]`}
             >
-              Hằng năm Trại{" "}
+              Hằng năm trang trại{" "}
               <span className=" uppercase ">heo giống Việt Thái</span> cung ứng
               ra thị trường hướng khoảng 5000 ngàn con heo giống các loại, từ
               nguồn giống heo cụ kỵ, ông bà đa dạng được Việt Thái nhập về từ

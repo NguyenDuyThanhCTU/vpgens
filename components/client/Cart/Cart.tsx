@@ -6,7 +6,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import CartSubmit from "./Items/CartSubmit";
 import CartCard from "./Items/CartCard";
-import { typingEffect } from "@components/items/ClientHandle";
+import { useTypingEffect } from "@components/items/ClientHandle";
 
 const Cart = () => {
   const { isCart, Bill, setBill } = useUser();
@@ -37,7 +37,7 @@ const Cart = () => {
             <textarea
               className="w-full outline-none border p-5 h-32 rounded-sm mt-5"
               value={Bill.note}
-              placeholder={typingEffect(texts, 50)}
+              placeholder={useTypingEffect(texts, 50)}
               onChange={(e) => setBill({ ...Bill, note: e.target.value })}
             />
           </div>

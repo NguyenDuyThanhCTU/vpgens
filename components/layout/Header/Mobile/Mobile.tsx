@@ -10,7 +10,7 @@ import { useUser } from "@context/UserProvider";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
 import DropdownMobile from "./DropdownMobile";
-import { typingEffect } from "@components/items/ClientHandle";
+import { useTypingEffect } from "@components/items/ClientHandle";
 import { useStateProvider } from "@context/StateProvider";
 import { CategoryProps } from "@assets/props/Props";
 
@@ -46,14 +46,14 @@ const Mobile = ({
     setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
   };
 
-  if (typeof window !== "undefined") {
-    useEffect(() => {
+  useEffect(() => {
+      if (typeof window !== "undefined") {
       window?.addEventListener("scroll", handleScroll);
       return () => {
         window?.removeEventListener("scroll", handleScroll);
       };
+    }
     }, [lastScrollTop]);
-  }
 
   return (
     <div
@@ -134,7 +134,7 @@ const Mobile = ({
         <input
           type="text"
           className="w-full outline-none px-3"
-          placeholder={typingEffect(texts, 50)}
+          placeholder={useTypingEffect(texts, 50)}
         />
         <div className="text-[22px]">
           <IoSearchOutline className=" text-white bg-mainOrange h-[35px] w-full px-3 " />

@@ -1,6 +1,6 @@
 "use client";
 import { ContactProps } from "@assets/props/PropsConfig";
-import { typingEffect } from "@components/items/ClientHandle";
+import { useTypingEffect } from "@components/items/ClientHandle";
 import { LocalFindById } from "@components/items/Handle";
 import { useStateProvider } from "@context/StateProvider";
 import { notification } from "antd";
@@ -83,7 +83,7 @@ const HomeNewLetter = () => {
                 type="text"
                 required={true}
                 className="outline-none p-2 bg-white w-full"
-                placeholder={typingEffect(texts, 50)}
+                placeholder={useTypingEffect(texts, 50)}
               />
             </div>
             <button

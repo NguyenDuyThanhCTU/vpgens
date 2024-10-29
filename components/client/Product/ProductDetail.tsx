@@ -270,7 +270,7 @@ const ProductDetail = ({
                   nhuận kinh tế hiệu quả từ việc chăn nuôi heo.
                 </li>
                 <li>
-                  &nbsp;Trang trại heo giống Việt Thái sẽ trở thành nhà cung cấp
+                  &nbsp;Trang Trại heo giống Việt Thái sẽ trở thành nhà cung cấp
                   heo giống hàng đầu Việt Nam, góp phần nâng cao hiệu quả chăn
                   nuôi và phát triển ngành chăn nuôi bền vững.
                 </li>

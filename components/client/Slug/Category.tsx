@@ -100,9 +100,9 @@ const Category = ({ CategoryData, SimilarData, type }: Category) => {
                   lower: true,
                 });
                 return (
-                  <div>
+                  <div       key={idx}>
                     <div
-                      key={idx}
+                
                       className="bg-mainBG py-2 px-5 flex justify-between items-center"
                     >
                       <Link href={`/blogs/${LV0Slug}`}>{item.level0}</Link>
@@ -140,9 +140,9 @@ const Category = ({ CategoryData, SimilarData, type }: Category) => {
                           });
 
                           return (
-                            <div>
+                            <div       key={lv1idx}>
                               <div
-                                key={lv1idx}
+                          
                                 className="bg-mainBG py-2 px-5 flex justify-between items-center pl-12"
                               >
                                 <Link

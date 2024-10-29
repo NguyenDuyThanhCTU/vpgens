@@ -14,7 +14,7 @@ interface ImageUploaderProps {
   PlaceHolder?: any;
 }
 
-export function typingEffect(texts: Array<string>, delay: number) {
+export function useTypingEffect(texts: Array<string>, delay: number) {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDone, setDone] = useState(false);
   const [RsText, setRsText] = useState("");
@@ -90,8 +90,8 @@ export const StickyTop = (divRef: any) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);
 
-  if (typeof window !== "undefined") {
-    useEffect(() => {
+  useEffect(() => {
+      if (typeof window !== "undefined") {
       const handleScroll = () => {
         const position =
           window?.pageYOffset || document.documentElement.scrollTop;
@@ -102,8 +102,8 @@ export const StickyTop = (divRef: any) => {
       return () => {
         window?.removeEventListener("scroll", handleScroll);
       };
+    }
     }, []);
-  }
   useEffect(() => {
     if (divRef.current) {
       setHeight(divRef.current.offsetHeight);

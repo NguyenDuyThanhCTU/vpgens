@@ -18,7 +18,7 @@ const AlbumPage = async () => {
       <PageH1 Title="Bộ sưu tập" type="collection" />
       <div className="flex flex-col items-center gap-3 py-10">
         <h2 className="p:text-[24px] d:text-[42px] p:tracking-[4px] d:tracking-[7px] text-center font-semibold">
-          Tại Việt Thái mỗi giống heo là một <br /> "Câu chuyện"
+          Tại Việt Thái mỗi giống heo là một <br /> &quot;Câu chuyện&quot;
         </h2>
         <Image
           src="https://firebasestorage.googleapis.com/v0/b/vpgens-e2128.appspot.com/o/heading-line.webp?alt=media&token=bdcd5ee3-1027-4feb-8377-c0e2aae3e108"

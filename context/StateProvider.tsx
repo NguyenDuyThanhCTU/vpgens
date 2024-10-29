@@ -1,6 +1,7 @@
 "use client";
 
 import { CategoryProps } from "@assets/props/Props";
+import { PostProps } from "@assets/props/PropsPost";
 import { ProductProps } from "@assets/props/PropsProduct";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
@@ -51,6 +52,7 @@ interface GlobalProps {
   Config: Array<any>;
   ProductCategory: CategoryProps[];
   PostCategory: CategoryProps[];
+  Blogs: PostProps[]
 }
 
 export type StateContextType = {
@@ -84,6 +86,7 @@ export const StateContext = createContext<StateContextType>({
     Config: [],
     ProductCategory: [],
     PostCategory: [],
+    Blogs:[]
   },
   setGlobal: () => {},
   isOpenModal: {
@@ -128,6 +131,7 @@ export const StateProvider = ({ children, Config }: Props) => {
     Config: [],
     ProductCategory: [],
     PostCategory: [],
+    Blogs:[]
   });
 
   useEffect(() => {

@@ -45,6 +45,7 @@ export default async function RootLayout({
             <Hotline />
             <ShopMobile />
             <Copyright
+            
               Products={Products}
               Config={Config}
               ProductCategory={ProductCategory}

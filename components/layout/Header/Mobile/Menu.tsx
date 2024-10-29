@@ -10,7 +10,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 import { GrSend } from "react-icons/gr";
 import { RxCross2 } from "react-icons/rx";
 import slugify from "slugify";
-import { typingEffect } from "@components/items/ClientHandle";
+import { useTypingEffect } from "@components/items/ClientHandle";
 import { ContactProps, SocialMediaProps } from "@assets/props/PropsConfig";
 
 interface MenuProps {
@@ -214,7 +214,7 @@ const Menu = ({ menuItems, setIsOpen }: MenuProps) => {
             <input
               type="text"
               className="w-full outline-none text-[17px] px-2 font-light text-black "
-              placeholder={typingEffect(texts, 50)}
+              placeholder={useTypingEffect(texts, 50)}
             />
             <div className="text-[23px] px-2">
               <GrSend className="" />

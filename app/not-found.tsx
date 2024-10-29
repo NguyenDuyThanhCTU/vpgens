@@ -24,7 +24,7 @@ export default async function NotFound() {
         </div>
         <div>
           <div className="text-center p:text-[14px] d:text-[16px]">
-            <p>We're sorry the page you requested was not found</p>
+            <p>We&apos;re sorry the page you requested was not found</p>
             <p>Please go back to the homepage!</p>
           </div>
           <div className="flex w-full justify-center mt-5">

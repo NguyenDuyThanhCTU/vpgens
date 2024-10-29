@@ -15,7 +15,7 @@ import User from "./Header/User";
 import { useStateProvider } from "@context/StateProvider";
 import { useUser } from "@context/UserProvider";
 import { Dropdown, DropdownMenu } from "./Header/Dropdown";
-import { typingEffect } from "@components/items/ClientHandle";
+import { useTypingEffect } from "@components/items/ClientHandle";
 import Mobile from "./Header/Mobile/Mobile";
 import { GoDotFill } from "react-icons/go";
 import { RxCross2 } from "react-icons/rx";
@@ -112,14 +112,14 @@ const Header = ({
     setLastScrollTop(scrollTop);
   };
 
-  if (typeof window !== "undefined") {
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       window?.addEventListener("scroll", handleScroll);
       return () => {
         window?.removeEventListener("scroll", handleScroll);
       };
-    }, [lastScrollTop]);
-  }
+    }
+  }, [lastScrollTop]);
 
   useEffect(() => {
     const sort = Products?.filter((product: any) =>
@@ -137,9 +137,9 @@ const Header = ({
           scrollTop > lastScrollTop ? " -top-[112px]" : "top-0"
         } fixed w-full bg-white d:block p:hidden duration-300 z-20`}
       >
-        <div className="h-[68px] d:w-[1370px] d:mx-auto grid grid-cols-6 gap-10 ">
+        <div className="h-[68px] d:w-[1370px] d:mx-auto grid grid-cols-4   gap-10 ">
           <div className="h-[68px] flex justify-center">
-            <Link href={`/`} className="">
+            <Link href={`/`} className=" h-full">
               <Image
                 src={
                   ContactData?.LogoWebsite
@@ -149,18 +149,18 @@ const Header = ({
                 alt="logo"
                 width={300}
                 height={300}
-                className="h-full w-[68px]"
+                className="h-full w-full object-contain"
               />
             </Link>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-2">
             <div className="w-full  items-center h-full flex relative">
               <div className="w-full flex pb-2 border-b  mr-5 border-gray-300">
                 <input
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder={typingEffect(texts, 50)}
+                  placeholder={useTypingEffect(texts, 50)}
                   className="outline-none  col-span-3 w-full"
                 />
                 <div
@@ -217,7 +217,7 @@ const Header = ({
               )}
             </div>
           </div>
-          <div className="col-span-2 flex items-center ">
+          <div className="col-span-1 flex items-center ">
             <div className="flex justify-between w-full items-center">
               <div className="flex items-center gap-2">
                 <FiPhoneCall className="text-[30px] text-gray-600" />

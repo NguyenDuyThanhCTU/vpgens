@@ -1,6 +1,7 @@
 "use client";
 
 import { CategoryProps } from "@assets/props/Props";
+import { PostProps } from "@assets/props/PropsPost";
 import { ProductProps } from "@assets/props/PropsProduct";
 import AddCart from "@components/modal/AddCart";
 import Cart from "@components/modal/Cart";
@@ -17,6 +18,7 @@ interface CopyrightProps {
   ProductCategory: CategoryProps[];
   PostCategory: CategoryProps[];
   Products: ProductProps[];
+
 }
 
 interface GlobalProps {
@@ -29,6 +31,7 @@ const Copyright = ({
   ProductCategory,
   PostCategory,
   Products,
+  
 }: CopyrightProps) => {
   const { setGlobal, isOpenModal, setOpenModal, isGlobal } = useStateProvider();
   useEffect(() => {
@@ -43,6 +46,7 @@ const Copyright = ({
     if (PostCategory) {
       newGlobalState.PostCategory = PostCategory;
     }
+
 
     setGlobal(newGlobalState);
   }, [Config, ProductCategory, PostCategory]);
@@ -61,7 +65,7 @@ const Copyright = ({
             />
           </div>
           <div className="text-[14px] text-gray-600 ">
-            © 2024 - All rights reserved by Heo giống Việt Thái
+            © 2024 - All rights reserved by Ngân Hàng Tinh Heo
           </div>
         </div>
       </div>
